@@ -1,1 +1,56 @@
-<h1>HOla</h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Piedra, papel o tijeras!!!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        
+        <header align="center">
+            <h1>Piedra, papel o Tijeras!!</h1>
+            <br>
+            <p><img src="images/html.png" alt=""> <img src="images/js.png" alt=""> <img src="images/css.png" alt=""></p>
+        </header>
+
+        <div id="entrada">
+            <label for="name">Nombre Jugador</label>
+            <input type="text" id="nombreJugador"  placeholder="Ingresa tu nombre">
+            <button id="boton">OK</button>
+        </div>
+
+            
+        <main>
+            <p class="instrucciones" id="instrucciones">
+                El primero en llegar a 5 puntos gana. VAMOS!!
+            </p> 
+    
+            <div class="marcador">
+                <div class="etiqueta etiquetaJugador" id="nombreJug">Usuario</div>                
+                <div class="etiqueta etiquetaComputadora">Computadora</div>
+                <div class="puntos">
+                <span id="puntosJugador">0</span> 
+                <span>-</span>
+                <span id="puntosComputadora">0</span>
+                </div>
+            </div>
+           
+            <div class="opciones" id="opciones">
+                <h2>Elegí tu opcion para el próximo turno</h2>
+                <button class="choice" id="Piedra">
+                    <img src="images/piedra2.png" alt="">
+                </button>
+                <button class="choice" id="Papel">
+                    <img src="images/papel2.png" alt="">
+                </button>
+                <button class="choice" id="Tijera">
+                    <img src="images/tijera2.png" alt="">
+                </button>
+            </div>
+        
+        <script type="text/javascript" src="/js/main.js"></script>
+    </body>
+</html>
