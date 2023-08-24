@@ -59,6 +59,11 @@ main {
 
 .instrucciones {
     margin-bottom: 2rem;
+    color: #fff;
+    border-radius: 3px;
+    font-family: 'Consolas', cursive;
+    font-size: large;
+    font-weight:bold;
 }
 
 #entrada {
@@ -105,15 +110,7 @@ main {
     font-size: 1.6rem;
 }
 
-.resultado{
-    font-size: 40px;
-    color: #fff;
-}
-.resultado>p{
-    text-align: center;
-    font-family: 'Consolas', cursive;
-}
-.opciones > h2 {
+.opciones > h3 {
     color: #FFF;
 }
 .opciones{
@@ -138,6 +135,19 @@ main {
     cursor: pointer;
 }
 
+.mensaje {
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-family: "Consolas", cursive;
+}
+
+.mensaje .eleccion {
+    color: #21618C;
+    background-color: #FFF;
+    border-radius: .25rem;
+    padding-inline: .25rem;
+    border: #21618C solid 3px;
+}
 
 
 .btn {

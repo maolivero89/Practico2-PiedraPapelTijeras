@@ -1,12 +1,21 @@
 let puntosJugador = 0;
 let puntosComputadora = 0;
 
-
+let instrucciones = document.querySelector("#instrucciones");
 let piedra_div= document.getElementById('Piedra');
 let papel_div= document.getElementById('Papel');
 let tijera_div= document.getElementById('Tijera');
 let contenedorPuntosUsuario = document.querySelector("#puntosJugador");
 let contenedorPuntosPC = document.querySelector("#puntosComputadora");
+let mensaje = document.querySelector("#mensaje");
+let contenedorGanaPunto = document.querySelector("#gana-punto");
+let elegiTuOpcion = document.querySelector("#opciones");
+
+
+let contenedorEleccionUsuario = document.querySelector("#eleccionUsuario");
+let contenedorEleccionPC = document.querySelector("#eleccionComputadora");
+
+
 
 
 
@@ -20,6 +29,7 @@ function obtenerNombreJugador() {
 
   }); 
 } obtenerNombreJugador();
+
 
 
 function obtenerJugadaComputadora() {
@@ -48,8 +58,30 @@ function obtenerJugadaComputadora() {
           empate(eleccionJugador);
         break;
       }
-    }
+
+      mensaje.classList.remove("disabled");
+      contenedorEleccionUsuario.innerText = eleccionJugador;
+      contenedorEleccionPC.innerText = eleccionComp;
+
+      if (puntosJugador === 3|| puntosComputadora === 3) {
+
+        if (puntosJugador === 3) {
+            instrucciones.innerText = "Ganaste el juego!"
+        }
+  
+        if (puntosComputadora === 3) {
+            instrucciones.innerText = "Perdiste ¡La computadora ganó el juego!"
+        }
+  
+        elegiTuOpcion.classList.add("disabled");
+        reiniciar.classList.remove("disabled");
+        reiniciar.addEventListener("click", reiniciarJuego);
+      }
+    } 
     
+    
+    
+
     function main(){
       piedra_div.addEventListener('click', () => game("Piedra"));
       papel_div.addEventListener('click', () => game("Papel"));
@@ -60,13 +92,29 @@ function obtenerJugadaComputadora() {
     function ganarUsuario(){
       puntosJugador++;
       contenedorPuntosUsuario.innerText = puntosJugador;
+      contenedorGanaPunto.innerText = "¡Ganaste un punto!  "
     }
 
     function ganarPc() {
       puntosComputadora++;
       contenedorPuntosPC.innerText = puntosComputadora;
+      contenedorGanaPunto.innerText = "¡La computadora ganó un punto!  "
     }
 
     function empate() {
-      alert("Es un empate");
+      contenedorGanaPunto.innerText = "¡Empate!"
+    }
+
+    function reiniciarJuego() {
+      reiniciar.classList.add("disabled");
+      elegiTuOpcion.classList.remove("disabled");
+      mensaje.classList.add("disabled");
+  
+      puntosJugador = 0;
+      puntosComputadora = 0;
+      
+      contenedorPuntosUsuario.innerText = puntosJugador;
+      contenedorPuntosPC.innerText = puntosComputadora;
+  
+      instrucciones.innerText = "El primero en ganar 3 rondas saldra victorioso."
     }

@@ -25,7 +25,7 @@
             
         <main>
             <p class="instrucciones" id="instrucciones">
-                El primero en llegar a 5 puntos gana. VAMOS!!
+                El juego se juega al mejor de 5 intentos. VAMOS!!
             </p> 
     
             <div class="marcador">
@@ -39,7 +39,7 @@
             </div>
            
             <div class="opciones" id="opciones">
-                <h2>Elegí tu opcion para el próximo turno</h2>
+                <h3>Elegí tu opcion para el próximo turno</h3>
                 <button class="choice" id="Piedra">
                     <img src="images/piedra2.png" alt="">
                 </button>
@@ -50,7 +50,17 @@
                     <img src="images/tijera2.png" alt="">
                 </button>
             </div>
+
+            <div class="mensaje disabled" id="mensaje">
+                <p>
+                    Usaste <span class="eleccion" id="eleccionUsuario">papel</span><br>
+                    y la computadora usó <span class="eleccion" id="eleccionComputadora">piedra</span>
+                </p>
+                <p id="gana-punto">¡Ganaste un punto!</p>
+            </div>
+            <button class="btn disabled" id="reiniciar">Reiniciar juego</button>
+        </main>
         
-        <script type="text/javascript" src="./js/main.js"></script>
+        <script type="text/javascript" src="../js/main.js"></script>
     </body>
 </html>
