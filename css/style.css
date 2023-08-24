@@ -3,13 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Consolas', cursive;
+   
 }
 
 
 body {
-    background-color: #283747 ;
+    background-color: #283747 ; 
     color: #fff;
-}
+    }
 
 header {
     display: flex;
