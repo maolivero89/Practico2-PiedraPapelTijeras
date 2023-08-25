@@ -18,19 +18,19 @@
 
         <div id="entrada">
             <label for="name">Nombre Jugador</label>
-            <input type="text" id="nombreJugador"  placeholder="Ingresa tu nombre">
-            <button id="boton">OK</button>
+            <input type="text" id="nombreJugador" onchange="upperCase()" placeholder="Ingresa tu nombre">
+            <button onclick="obtenerNombreJugador()" id="boton">OK</button>
         </div>
 
             
         <main>
             <p class="instrucciones" id="instrucciones">
-                El juego se juega al mejor de 5 intentos. VAMOS!!
+                El juego dara por ganador al mejor de 5 intentos. VAMOS!!
             </p> 
     
             <div class="marcador">
                 <div class="etiqueta etiquetaJugador" id="nombreJug">Usuario</div>                
-                <div class="etiqueta etiquetaComputadora">Computadora</div>
+                <div class="etiqueta etiquetaComputadora">COMPUTADORA</div>
                 <div class="puntos">
                 <span id="puntosJugador">0</span> 
                 <span>-</span>

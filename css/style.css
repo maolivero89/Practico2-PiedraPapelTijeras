@@ -133,6 +133,7 @@ main {
 .choice:hover{
     background: #21618C;
     cursor: pointer;
+    animation: shake 1s ;
 }
 
 .mensaje {
@@ -167,4 +168,23 @@ main {
 .disabled {
         display: none;
     } 
+
+    @keyframes shake {
+
+
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+            transform: translateY(-10px);
+        }
+      
+        20%,
+        40%,
+        60%,
+        80% {
+            transform: translateY(10px);
+        }
+      }
  
