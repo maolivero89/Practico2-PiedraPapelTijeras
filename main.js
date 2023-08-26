@@ -100,14 +100,14 @@ function main(){
   function ganarUsuario(){
     puntosJugador++;
     contenedorPuntosUsuario.innerText = puntosJugador;
-    contenedorGanaPunto.innerText =  "¡Ganaste un punto!  "
+    contenedorGanaPunto.innerText =  " 🧑‍💻 ¡Ganaste un punto! 💣💥"
   }
 
     //suma puntos a la computadora la ganar una ronda
   function ganarPc() {
     puntosComputadora++;
     contenedorPuntosPC.innerText = puntosComputadora;
-    contenedorGanaPunto.innerText = "¡La computadora ganó un punto!  "
+    contenedorGanaPunto.innerText = "💻 ¡La computadora ganó un punto! 💣💥 "
   }
 
   //muestra un empate, no suma puntos
