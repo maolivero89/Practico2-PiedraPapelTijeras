@@ -74,11 +74,11 @@ function game(opcion){
       if (puntosJugador === 3|| puntosComputadora === 3) {
 
         if (puntosJugador === 3) {
-            instrucciones.innerText =  nombreJugador.value +" Ganaste el juego!";       
+            instrucciones.innerText =  "🔥🤪" + nombreJugador.value +"🔥🤪 Ganaste el juego!🥳🥳";       
            }
   
         if (puntosComputadora === 3) {
-            instrucciones.innerText =  nombreJugador.value + " Perdiste ¡La computadora ganó el juego!"            
+            instrucciones.innerText =  "😵‍💫"+ nombreJugador.value + "🥴 Perdiste ¡La computadora ganó el juego! 😤😤"            
           }
   
         elegiTuOpcion.classList.add("disabled");
