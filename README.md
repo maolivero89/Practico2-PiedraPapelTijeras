@@ -10,6 +10,7 @@
 
 ### INSTRUCCIONES DE USO
 1- Ingrese su nombre en el box destinado a ello.
+
 2- Elija uno de los botones animados : piedra, papel o tijera.
 
 PIEDRA: Rompe la tijera para GANAR. PIERDE contra el papel que lo envuelve. EMPATA con otra piedra.
@@ -17,7 +18,9 @@ PAPEL: Envuelve la piedra para GANAR. PIERDE contra la tijera que lo corta. EMPA
 TIJERA: Corta el papel para GANAR. PIERDE contra la piedra que la rompe. EMPATA con otra tijera.
 
 3- La computadora hace su eleccion aleatoriamente. Y de acuerdo a las reglas anteriores, el ganador obtiene un punto.
+
 4- El que obtenga mas puntos al mejor de 5 rondas. Sera el GANADOR.
+
 5- Reinicia el juego y prueba otra vez suerte!
 
 
