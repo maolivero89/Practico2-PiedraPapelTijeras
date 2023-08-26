@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@300&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Consolas', cursive;
+    font-family:  'Gluten', cursive;
    
 }
 
@@ -26,7 +29,7 @@ header {
 .social_container{
     grid-template-columns: max-content;
     gap: 1rem;
-    margin-top: 5px;
+    margin-top: 5px;    
     }
   
   .social_link{
@@ -59,14 +62,14 @@ main {
     text-align: center;
     color: #fff;
     padding: 10px;
-    font-family: 'Consolas', cursive;
+    font-family:  'Gluten', cursive;
     border-radius: 10px;
 }
 
 #entrada > #boton{
     color: #fff;
     background: #21618C;
-    font-family: 'Consolas', cursive;
+    font-family:  'Gluten', cursive;
     width: 40px;
     height: 30px;
     text-align: center;
@@ -83,7 +86,7 @@ main {
     margin-bottom: 2rem;
     color: #fff;
     border-radius: 3px;
-    font-family: 'Consolas', cursive;
+    font-family:  'Gluten', cursive;
     font-size: large;
     font-weight:bold;
 }
@@ -92,7 +95,7 @@ main {
     text-align: center;
     color: #fff;
     padding: 10px;
-    font-family: 'Consolas', cursive;
+    font-family:  'Gluten', cursive;
     border-radius: 10px;
 }
 
@@ -140,7 +143,7 @@ main {
     margin: 10px 0px;
     color: #21618C;
     padding: 10px;
-    font-family: 'Consolas', cursive;
+    font-family:  'Gluten', cursive;
 
 }
 .choice{
@@ -161,7 +164,7 @@ main {
 .mensaje {
     margin-bottom: 2rem;
     line-height: 1.8;
-    font-family: "Consolas", cursive;
+    font-family:  'Gluten', cursive;
 }
 
 .mensaje .eleccion {
