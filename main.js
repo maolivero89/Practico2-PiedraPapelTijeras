@@ -53,12 +53,12 @@ function game(opcion){
      case 'PiedraTijera':
      case 'PapelPiedra':
      case 'TijeraPapel':
-         ganarUsuario(eleccionJugador, eleccionComp);
+         ganarPc(eleccionJugador, eleccionComp);
         break;
      case 'PiedraPapel':
      case 'PapelTijera':
      case 'TijeraPiedra':
-         ganarPc(eleccionJugador, eleccionComp);
+         ganarUsuario(eleccionJugador, eleccionComp);
         break;
      case 'PiedraPiedra':
      case 'PapelPapel':

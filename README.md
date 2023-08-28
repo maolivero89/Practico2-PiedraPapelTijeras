@@ -60,8 +60,43 @@ La solucion fue crear la funcion upperCase(), que pasara el texto ingresado en e
 ```
 - 
 
+- Teniamos un error en el JS del juego, las reglas del mismo no se aplicaban correctamente.
+
+ Si elegiamos PIEDRA y la computadora escogia PAPEL, se corria la funcion ganarUsuario(), cuando debia correr la funcion ganarPC() y asi con todas las opciones. Y viceversa, si debia correr la funcion ganarUsuario(), terminaba iniciando la funcion ganarPc().
 
 
+Ejemplo:
+
+<img src= "https://github.com/maolivero89/Practico2-PiedraPapelTijeras/blob/main/images/error1.jpg">
+
+
+SOLUCION:
+La solucion fue intercambiar de lugar las funciones ganarPc() con ganarUsuario().
+Otra solucion hubiese sido, en el switch intercambiar de posicion " (eleccionComp+eleccionJugador) "
+
+```
+function game(opcion){
+  const eleccionComp= obtenerJugadaComputadora();
+  const eleccionJugador= opcion;
+   switch (eleccionComp+eleccionJugador) {
+     case 'PiedraTijera':
+     case 'PapelPiedra':
+     case 'TijeraPapel':
+         ganarPc(eleccionJugador, eleccionComp); <------
+        break;
+     case 'PiedraPapel':
+     case 'PapelTijera':
+     case 'TijeraPiedra':
+         ganarUsuario(eleccionJugador, eleccionComp); <------
+        break;
+     case 'PiedraPiedra':
+     case 'PapelPapel':
+     case 'TijeraTijera':
+         empate(eleccionJugador);
+        break;
+    }
+}
+```
 
 
 
