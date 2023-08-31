@@ -87,7 +87,7 @@ main {
     color: #fff;
     border-radius: 3px;
     font-family:  'Gluten', cursive;
-    font-size: large;
+    font-size:x-large;
     font-weight:bold;
 }
 
@@ -134,6 +134,55 @@ main {
 .marcador .puntos {
     font-size: 1.6rem;
 }
+
+
+
+.rondaFinal {
+  background-color: #379173;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  border: 3px solid #fff;
+  
+} 
+
+
+.rondaFinal .ronda{
+  position: absolute;
+  color: #FFF;
+  background-color: #379173;
+  line-height: 1;
+  padding: .5rem;
+  border-radius: .5rem;
+  border: 2px solid #FFF;
+}
+
+.rondaFinal .rondaJugador {
+  right: 85%;
+}
+
+.rondaFinal .rondaComputadora{
+  left: 85%;
+}
+
+.rondaFinal .puntos {
+  font-size: 1.6rem;
+}
+
+#instruccionesRonda {
+  margin-bottom: 2rem;
+  color: #fff;
+  border-radius: 3px;
+  font-family:  'Gluten', cursive;
+  font-size:xx-large;
+  font-weight:bold;
+}
+
 
 .opciones > h3 {
     color: #FFF;
@@ -188,7 +237,23 @@ main {
     text-transform: uppercase;
     font-weight: 600;
     
-    }
+}
+
+.btnRondas {
+      border: 0;
+      line-height: 1;
+      background-color:#379173;
+      color: #fff;
+      font-size: 16px;
+      padding: 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: 600;
+      
+}  
+
+
 
 .disabled {
         display: none;

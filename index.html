@@ -18,7 +18,7 @@
                        
         </header>
 
-        <div id="entrada">
+        <div id="entrada" aling="center">
             <label for="name">Nombre Jugador</label>
             <input type="text" id="nombreJugador" onchange="upperCase()" placeholder="Ingresa tu nombre">
             <button onclick="obtenerNombreJugador()" id="boton">OK</button>
@@ -27,7 +27,7 @@
             
         <main>
             <p class="instrucciones" id="instrucciones">
-                El juego dará por ganador al mejor de 5 intentos. VAMOS!!
+                El que gane 3 rondas, gana el juego.
             </p> 
     
             <div class="marcador">
@@ -51,7 +51,8 @@
                 <button class="choice" id="Tijera">
                     <img src="images/tijera2.png" alt="">
                 </button>
-            </div>
+            </div>           
+           
 
             <div class="mensaje disabled" id="mensaje">
                 <p>
@@ -59,8 +60,33 @@
                     y la computadora usó <span class="eleccion" id="eleccionComputadora">piedra</span>
                 </p>
                 <p id="gana-punto">¡Ganaste un punto!</p>
+            </div>     
+
+            <button class="btn disabled" id="reiniciar">Siguiente Ronda</button>
+
+            <br><br><br>
+
+            <h3>RONDAS GANADAS</h3>
+            <div class="mensajeR disabled" id="mensajeR">
+            <p class= "instruccionesRonda" id="instruccionesRonda"> GANASTE EL JUEGO!</p> 
             </div>
-            <button class="btn disabled" id="reiniciar">Reiniciar juego</button>
+            <br><br>
+            <div class="rondaFinal">
+              <div class="ronda rondaJugador" id="nombreJug2">Usuario</div>
+              <div class="ronda rondaComputadora" >COMPUTADORA</div>
+              <div class="puntos">
+                <span id="puntosFJugador">0</span> 
+                <span>-</span>
+                <span id="puntosFComputadora">0</span>          
+              </div>              
+            </div>
+
+            <br><br><br>
+
+            <button class="btnRondas disabled" id="reiniciar2">Reiniciar juego</button>
+
+
+            
         </main>
 
         <footer align="center">

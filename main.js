@@ -1,18 +1,27 @@
-// Marcadores en 0 para ambos jugadores
-
 let puntosJugador = 0;
 let puntosComputadora = 0;
+let rondasJugador= 0;
+let rondasComputadora =0;
 
 let instrucciones = document.querySelector("#instrucciones");
+let instruccionesRonda = document.querySelector("#instruccionesRonda");
+
 let piedra_div= document.getElementById('Piedra');
 let papel_div= document.getElementById('Papel');
 let tijera_div= document.getElementById('Tijera');
+
 let contenedorPuntosUsuario = document.querySelector("#puntosJugador");
 let contenedorPuntosPC = document.querySelector("#puntosComputadora");
 let mensaje = document.querySelector("#mensaje");
+let mensajeR = document.querySelector("#mensajeR");
+
 let contenedorGanaPunto = document.querySelector("#gana-punto");
+
 let elegiTuOpcion = document.querySelector("#opciones");
 
+let contenedorRondaUsuario = document.querySelector("#puntosFJugador");
+let contenedorRondaComputadora= document.querySelector("#puntosFComputadora");
+let contenedorGanaJuego = document.querySelector("#gana-Juego");
 
 let contenedorEleccionUsuario = document.querySelector("#eleccionUsuario");
 let contenedorEleccionPC = document.querySelector("#eleccionComputadora");
@@ -32,6 +41,7 @@ function obtenerNombreJugador() {
   let input = (document.getElementById("nombreJugador").value);
   let nombreJugador = input;
   document.getElementById("nombreJug").innerHTML=nombreJugador.toUpperCase(); //convierte el nombre en MAYUS en el tablero
+  document.getElementById("nombreJug2").innerHTML=nombreJugador.toUpperCase();
   document.getElementById("entrada").style.display="none"; // Oculta el div luego de presionar el boton
 
   }); 
@@ -44,7 +54,7 @@ function obtenerJugadaComputadora() {
    return valoresJuego[Math.floor(Math.random() * valoresJuego.length)];
 }
 
-    // funcion para comparar jugadas entre usuario y computadora. Y determinar el ganador del juego.
+    // funcion para comparar jugadas entre usuario y computadora. Y determinar el ganador de las rondas y el juego.
 
 function game(opcion){
   const eleccionComp= obtenerJugadaComputadora();
@@ -73,22 +83,45 @@ function game(opcion){
 
       if (puntosJugador === 3|| puntosComputadora === 3) {
 
-        if (puntosJugador === 3) {
-            instrucciones.innerText =  "🔥🤪" + nombreJugador.value +"🔥🤪 Ganaste el juego!🥳🥳";       
+        if (puntosJugador === 3) {                
+            instrucciones.innerText =  nombreJugador.value +" Ganaste la ronda!. Sumas una Victoria.";
+            rondasJugador++;
+            contenedorRondaUsuario.innerText = rondasJugador;
            }
   
-        if (puntosComputadora === 3) {
-            instrucciones.innerText =  "😵‍💫"+ nombreJugador.value + "🥴 Perdiste ¡La computadora ganó el juego! 😤😤"            
+        if (puntosComputadora === 3) {          
+            instrucciones.innerText =  nombreJugador.value + " Perdiste ¡La computadora ganó la ronda!. Suma una Victoria"   
+            rondasComputadora++;
+            contenedorRondaComputadora.innerText = rondasComputadora;         
           }
   
         elegiTuOpcion.classList.add("disabled");
         reiniciar.classList.remove("disabled");        
-        reiniciar.addEventListener("click", reiniciarJuego);
+        reiniciar.addEventListener("click", reiniciarRonda);
                 
       }
-}   
 
-      //obtener jugada del jugador mediante el click en el boton elegido
+      if (rondasJugador === 3 || rondasComputadora === 3) {
+
+        if (rondasJugador === 3) {                
+            instruccionesRonda.innerText =  "🔥🤪" + nombreJugador.value +"🔥🤪 GANASTE EL JUEGO!🥳🥳";
+            }
+  
+        if (rondasComputadora === 3) {          
+            instruccionesRonda.innerText =  "😵‍💫"+ nombreJugador.value + "🥴 Perdiste ¡La computadora ganó el juego! 😤😤"   
+            }   
+      
+            
+        mensajeR.classList.remove("disabled");    
+        reiniciar.classList.add('disabled');
+        reiniciar2.classList.remove("disabled");  
+        reiniciar2.addEventListener("click", reiniciarJuego);
+      
+     
+
+    }
+  }
+  //obtener jugada del jugador mediante el click en el boton elegido
 function main(){
   piedra_div.addEventListener('click', () => game("Piedra"));
   papel_div.addEventListener('click', () => game("Papel"));
@@ -101,6 +134,7 @@ function main(){
     puntosJugador++;
     contenedorPuntosUsuario.innerText = puntosJugador;
     contenedorGanaPunto.innerText =  " 🧑‍💻 ¡Ganaste un punto! 💣💥"
+    
   }
 
     //suma puntos a la computadora la ganar una ronda
@@ -113,11 +147,13 @@ function main(){
   //muestra un empate, no suma puntos
   function empate() {
      contenedorGanaPunto.innerText = "¡Empate!"
-  }
+  } 
+
+
 
   //reinicia el juego, luego de un ganador.
 
- function reiniciarJuego() {
+ function reiniciarRonda() {
     reiniciar.classList.add("disabled");
     elegiTuOpcion.classList.remove("disabled");
     mensaje.classList.add("disabled");
@@ -131,3 +167,27 @@ function main(){
   
     instrucciones.innerText = "El primero en ganar 3 rondas saldra victorioso."
     }
+
+
+    function reiniciarJuego() {
+      reiniciar2.classList.add("disabled");
+      mensaje.classList.add("disabled");
+      mensajeR.classList.add("disabled");
+      elegiTuOpcion.classList.remove("disabled");
+      
+      
+  
+
+      puntosJugador = 0;
+      puntosComputadora = 0;
+      rondasJugador= 0;
+      rondasComputadora =0;
+      
+    contenedorPuntosUsuario.innerText = puntosJugador;
+    contenedorPuntosPC.innerText = puntosComputadora;
+    contenedorRondaComputadora.innerHTML = rondasComputadora;
+    contenedorRondaUsuario.innerHTML = rondasJugador;  
+
+    instrucciones.innerText = "El primero en ganar 3 rondas saldra victorioso."
+
+}
